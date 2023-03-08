@@ -1,0 +1,437 @@
+
+/*Style application general*/
+:root{
+    --colorOne: #ffffff;
+    --colorTwo: #37434f;
+    --colorTree: #00B6DA;
+    --colorFour: #0049DA;
+    --colorFive: #24313C;
+    --colorSix: #0da195;
+    --colorSeven: #1bd3c4;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: Work Sans;
+    color: var(--colorOne);
+    background-image: url(./photoGallery/background.png);
+    background-size: cover;
+    background-position: center;
+
+}
+    header{
+        width: 100%;
+        height: 12vh;
+        position: relative;
+        display: flex;
+    }
+        header aside:first-child{
+            display: flex;
+        }
+            header aside:first-child h1{
+                text-align: center;
+                font-weight: lighter;
+            }
+        header aside:nth-child(2){
+            position: absolute;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-evenly;
+            align-content: center;
+            background-color: transparent;
+            transition: 1s background ease-in-out;
+        }
+        header aside:nth-child(2):hover{
+            background-color: var(--colorTwo);
+        }
+            header aside:nth-child(2) div{
+                transition: all 800ms ease-in-out;
+                background-color: var(--colorOne);
+            }
+        header aside:last-child{
+            top: 12vh;
+            right: 0;
+            width: 0;
+            height: 88vh;
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            transition: width 600ms ease-in-out;
+            background-image: url(./photoGallery/backgroundMenu.png);
+            background-size: cover;
+            background-position: center;
+            
+        }
+            header aside:last-child h2{     
+                margin-top: 3vh;
+                width: calc(100% - 6vh);
+                font-weight: lighter;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+                opacity: 0;
+                transition: opacity 200ms linear;
+                background-color: var(--colorTree);
+            }
+            header aside:last-child h2:hover{
+                background-color: var(--colorFour);
+            }
+            header aside:last-child h2:active{
+                background-color: var(--colorFour);
+                transform: scale(0.95);
+            }
+            header aside:last-child p{
+                width: calc(100% - 12vh);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: justify;
+                height: 0%;
+                padding: 0vh 3vh;
+                transition: height 300ms ease-in-out;
+                background-color: var(--colorTree);
+            }
+    main{
+        width: 100%;
+        height: 76vh;
+        padding-bottom: 12vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        main .interface{
+            transition: opacity 250ms linear;
+        }
+        main .firstDisplay{
+            transition: opacity 250ms linear;
+            background-color: var(--colorFive);
+        }
+            .firstDisplay .card{
+                display: flex;
+            }
+                .card input{
+                    border: 0.4vh;
+                    border-color: transparent;
+                    border-style: solid;
+                    outline: 0;
+                    height: 5.2vh;
+                    border-bottom: 0.4vh solid var(--colorSix);
+                    text-align: center;
+                    color: var(--colorOne);
+                    background-color: transparent;
+                }
+                .card input::placeholder{
+                    color: var(--colorSeven);
+                }
+            .firstDisplay aside:last-child{
+                width: 100%;
+                height: 15vh;
+                display: flex;
+                justify-content: center;
+            }
+                .firstDisplay aside:last-child h3{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: lighter;
+                    background-color: var(--colorTree);
+                }
+                .firstDisplay aside:last-child h3:hover{
+                    background-color: var(--colorFour);
+                }
+                .firstDisplay aside:last-child h3:active{
+                    background-color: var(--colorFour);
+                    transform: scale(0.95);
+                }
+        main .secondDisplay{
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            position: relative;
+            display: none;
+            opacity: 0;
+            transition: opacity 250ms linear;
+        }
+            .secondDisplay .cardGame{
+                transition: opacity 250ms linear;
+            }
+            .secondDisplay h2{
+                transition: opacity 250ms linear;
+                text-shadow: 0px 0px 5px var(--colorFive);
+                color: var(--colorSeven);
+            }
+            .secondDisplay .displayResult{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0%;
+                height: 0%;
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                transition: all 1s ease-in-out;
+                background-color: var(--colorFive);
+            }
+                .displayResult h1{  
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    text-shadow: 0px 0px 5px var(--colorFive);
+                    color: var(--colorSeven);
+                }
+                .displayResult h3{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-weight: lighter;
+                    background-color: var(--colorTree);
+                }
+                .displayResult h3:hover{
+                    background-color: var(--colorFour);
+                }
+                .displayResult h3:active{
+                    background-color: var(--colorFour);
+                    transform: scale(0.95);
+                }
+                .displayResult .itemResult{
+                    display: none;
+                }
+
+/*Style application orientation landscape*/
+@media all and (orientation: landscape){
+        header aside:first-child{
+            width: 50%;
+            margin-left: 5%;
+            align-items: center;
+        }
+            header aside:first-child h1{
+                font-size: 6vh;
+                padding: 0 2%;
+            }
+        header aside:nth-child(2){
+            width: 7vh;
+            height: 7vh;
+            padding: 0.7vh;
+            border-radius: 7vh;
+            top: 1.8vh;
+            right: 5%;
+        }
+            header aside:nth-child(2) div{
+                width: 5.6vh;
+                height: 1vh;
+            }
+            header aside:last-child h2{
+                height: 12vh;
+                font-size: 4vh;
+            }
+            header aside:last-child p{
+                text-indent: 6vh;
+                font-size: 3.6vh;
+            }
+        main .firstDisplay{
+            width: 72vh;
+            height: 54vh;
+            padding: 6vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: end;
+        }
+            .firstDisplay .card{
+                width: 45%;
+                margin-top: 0vh;
+                flex-flow: column wrap;
+                justify-content: end;
+                align-items: center;
+            }
+                .card img{
+                    height: 27vh;
+                }
+                .card input{
+                    width: calc(100% - 0.8vh);
+                    margin: 3vh 0;
+                    font-size: 1.3vw;
+                }
+            .firstDisplay aside:last-child{
+                margin-bottom: 0vh;
+            }
+                .firstDisplay aside:last-child h3{
+                    width: 40%;
+                    height: 8vh;
+                    margin: 2vh 0 5vh;
+                    font-size: 2vw;
+                }
+        main .secondDisplay{
+            width: 60vh;
+            height: 70vh;
+        }
+            .secondDisplay h2{
+                height: 10vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.6vw;
+            }
+            .secondDisplay aside{
+                height: 60vh;
+                width: 60vh;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-content: center;
+            }
+                .secondDisplay aside .cardGame{
+                    width: 19.6vh;
+                    height: 19.6vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10vh;
+                }
+                .secondDisplay aside .hLines{
+                    border-top: 0.6vh solid var(--colorSix);
+                    border-bottom: 0.6vh solid var(--colorSix);
+                }
+                .secondDisplay aside .vLines{
+                    border-left: 0.6vh solid var(--colorSix);
+                    border-right: 0.6vh solid var(--colorSix);
+                }
+                .displayResult h1{
+                    width: 90%;
+                    margin-top: 10vh;
+                    min-height: 10vh;
+                    padding: 0 5%;
+                    font-size: 2vw;
+                }
+                .displayResult h3{
+                    width: 40%;
+                    height: 10vh;
+                    margin-top: 5vh;
+                    font-size: 1.6vw;
+                }
+}
+
+/*Style application orientation portrait*/
+@media all and (orientation: portrait){
+        header aside:first-child{
+            width: 100%;
+            height: 12vh;
+            justify-content: center;
+            align-items: center;
+        }
+            header aside:first-child h1{
+                font-size: 3.3vh;
+            }
+        header aside:nth-child(2){
+            width: 4vh;
+            height: 4vh;
+            padding: 0.4vh;
+            border-radius: 4vh;
+            top: 3.6vh;
+            right: 4vh;
+        }
+            header aside:nth-child(2) div{
+                width: 3.2vh;
+                height: 0.57vh;
+            }
+            header aside:last-child h2{
+                height: 9vh;
+                font-size: 3vh;
+            }
+            header aside:last-child p{
+                text-indent: 6vh;
+                font-size: 2vh;
+            }
+        main .firstDisplay{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            padding: 2.5vh 0;
+            width: calc(100% - 10vh);
+            height: 61vh;
+        }
+            .firstDisplay .card{
+                width: 100%;
+                height: 23vh;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+                .card img{
+                    width: 30%;
+                    height: auto;
+                }
+                .card input{
+                    width: calc(50% - 0.8vh);
+                    font-size: 4vw;
+                }
+                .firstDisplay aside:last-child h3{
+                    width: 50%;
+                    height: 7vh;
+                    margin: 4vh 25% 4vh;
+                    font-size: 2.5vh;
+                }
+        main .secondDisplay{
+            width: 75vw;
+            height: 87.5vw;
+        }
+            .secondDisplay h2{
+                height: 12.5vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3.5vw;
+            }
+            .secondDisplay aside{
+                height: 75vw;
+                width: 75vw;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-content: center;
+            }
+                .secondDisplay aside .cardGame{
+                    width: 24.6vw;
+                    height: 24.6vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 12vw;
+                }
+                .secondDisplay aside .hLines{
+                    border-top: 0.6vw solid var(--colorSix);
+                    border-bottom: 0.6vw solid var(--colorSix);
+                }
+                .secondDisplay aside .vLines{
+                    border-left: 0.6vw solid var(--colorSix);
+                    border-right: 0.6vw solid var(--colorSix);
+                }
+                .displayResult h1{
+                    width: 90%;
+                    min-height: 15vw;
+                    margin-top: 15vw;
+                    padding: 0 5%;
+                    font-size: 5vw;
+                }
+                .displayResult h3{
+                    width: 40%;
+                    height: 10vw;
+                    margin-top: 7.5vw;
+                    font-size: 4vw;
+                }
+}
+
+/*Declaration of font external*/
+@font-face {
+    font-family: Work Sans;
+    src: url(./font/WorkSans-Light.ttf);
+}

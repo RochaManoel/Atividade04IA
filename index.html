@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./css/photoGallery/logo.png" type="image/x-icon">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <header>
+        <aside>
+            <h1>JOGO DA VELHA</h1>
+        </aside>
+        <aside class="button">
+            <div class="animation"></div>
+            <div class="animation"></div>
+            <div class="animation"></div>
+        </aside>
+        <aside id="boxMenu">
+            <h2 class="links button">REGRAS</h2>
+            <p></p>
+            <h2 class="links button">REINICIAR</h2>
+        </aside>
+    </header>
+    <main>
+        <section class="interface firstDisplay">
+            <aside class="card">
+                <img src="./css/photoGallery/userOne.png" alt="">
+                <input type="text" placeholder="Player" id="firstPlayer">
+            </aside>
+            <aside>
+                <h3 id="Start" class="button">INICIAR</h3>
+            </aside>
+        </section>
+        <section class="interface secondDisplay">
+            <h2 id="titleCurrent">O jogador da vez é </h2>
+            <aside class="transition">
+                <div onclick="engine(0,true)" class="cardGame"></div>
+                <div onclick="engine(1,true)" class="cardGame vLines"></div>
+                <div onclick="engine(2,true)" class="cardGame"></div>
+                <div onclick="engine(3,true)" class="cardGame hLines"></div>
+                <div onclick="engine(4,true)" class="cardGame vLines hLines"></div>
+                <div onclick="engine(5,true)" class="cardGame hLines"></div>
+                <div onclick="engine(6,true)" class="cardGame"></div>
+                <div onclick="engine(7,true)" class="cardGame vLines"></div>
+                <div onclick="engine(8,true)" class="cardGame"></div>
+            </aside>
+                <div class="displayResult">
+                    <h1 id="titleResult" class="itemResult"></h1>
+                    <h3 class="button itemResult">REINICIAR</h3>
+                    <h3 class="button itemResult">NOVO JOVO</h3>
+                </div>
+        </section>
+    </main>
+    <script src="./javascript/script.js"></script>
+</body>
+</html>
